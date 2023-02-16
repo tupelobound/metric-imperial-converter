@@ -1,8 +1,10 @@
 // set up
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = 3000
-const apiRoutes = require('./routes/api.js');
+const apiRoutes = require('./routes/api.js')
+const runner = require('./test-runner')
 
 // serve static assets from the 'public' directory
 app.use(express.static('public'))
