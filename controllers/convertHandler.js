@@ -1,10 +1,4 @@
-/*
- *
- *
- *       Complete the handler logic below
- *
- *
- */
+
 const math = require('mathjs');
 
 function ConvertHandler() {

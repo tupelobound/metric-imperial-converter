@@ -2,8 +2,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
-var apiRoutes = require('./routes/api.js');
+const apiRoutes = require('./routes/api.js');
 
 // serve static assets from the 'public' directory
 app.use(express.static('public'))
