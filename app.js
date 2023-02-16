@@ -28,3 +28,5 @@ app.listen(port, () => {
     }, 1500);
   };
 })
+
+module.exports = app; //for testing
