@@ -12,5 +12,17 @@ apiRoutes(app);
 
 // listen for requests
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
+  if(process.env.NODE_ENV==='test') {
+    console.log('Running Tests...');
+    setTimeout(function () {
+      try {
+        runner.run();
+      } catch(e) {
+        var error = e;
+          console.log('Tests are not valid:');
+          console.log(error);
+      }
+    }, 1500);
+  };
 })
