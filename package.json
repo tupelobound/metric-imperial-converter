@@ -1,0 +1,22 @@
+{
+  "name": "metric-imperial-converter",
+  "version": "1.0.0",
+  "description": "freeCodeCamp Quality Assurance project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tupelobound/metric-imperial-converter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tupelobound/metric-imperial-converter/issues"
+  },
+  "homepage": "https://github.com/tupelobound/metric-imperial-converter#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
