@@ -1,11 +1,14 @@
-
+// require mathjs module
 const math = require('mathjs');
 
+// create ConvertHandler template
 function ConvertHandler() {
+    // get digit from user input
     this.getNum = function (input) {
         var result = input.replace(/[a-z]/gi, "");
         var split = result.split("/");
 
+        // handle invalid numbers
         if (split.length > 2) {
             return "invalid number";
         } else if (result == "") {
@@ -15,8 +18,11 @@ function ConvertHandler() {
         }
     };
 
+    // get unit from user input
     this.getUnit = function (input) {
         var result = input.replace(/[^a-z]/gi, "");
+
+        // create list of possible units
         var units = [
             "gal",
             "l",
@@ -32,6 +38,7 @@ function ConvertHandler() {
             "KG"
         ];
 
+        // handle incompatible unit input
         if (units.includes(result) == false) {
             return "unknown input unit";
         } else {
@@ -39,6 +46,7 @@ function ConvertHandler() {
         }
     };
 
+    // return the correct converted unit based on input unit
     this.getReturnUnit = function (initUnit) {
         switch (initUnit) {
             case "gal":
@@ -62,6 +70,7 @@ function ConvertHandler() {
         }
     };
 
+    // return the full unit name based on input
     this.spellOutUnit = function (unit) {
         switch (unit) {
             case "gal":
@@ -85,6 +94,7 @@ function ConvertHandler() {
         }
     };
 
+    // conversion logic
     this.convert = function (initNum, initUnit) {
         const galToL = 3.78541;
         const lbsToKg = 0.453592;
@@ -112,6 +122,7 @@ function ConvertHandler() {
         }
     };
 
+    // create result string from input and output
     this.getString = function (initNum, initUnit, returnNum, returnUnit) {
         var result = {
             initNum: initNum,
@@ -128,6 +139,7 @@ function ConvertHandler() {
                 this.spellOutUnit(returnUnit)
         };
 
+        // create error string
         if (initNum == "invalid number" && initUnit == "unknown input unit") {
             return { error: "invalid number and unit", string: "Error - invalid number and unit" };
         } else if (initNum == "invalid number") {
@@ -140,4 +152,5 @@ function ConvertHandler() {
     };
 }
 
+// export this module
 module.exports = ConvertHandler;
